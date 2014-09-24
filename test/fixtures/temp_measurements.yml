@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  raw: 
+  measured_at: 2014-09-24 22:40:14
+  description: MyString
+  sensor_id: 
+  measurement: 1.5
+
+two:
+  raw: 
+  measured_at: 2014-09-24 22:40:14
+  description: MyString
+  sensor_id: 
+  measurement: 1.5
