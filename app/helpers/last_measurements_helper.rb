@@ -1,0 +1,2 @@
+module LastMeasurementsHelper
+end

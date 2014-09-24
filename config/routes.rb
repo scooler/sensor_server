@@ -5,6 +5,7 @@ SensorServera::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
+  resources :last_measurements, only: :index
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
