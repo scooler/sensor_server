@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 20140924204013) do
 
   create_table "temp_measurements", force: true do |t|
     t.integer  "raw"
-    t.time     "measured_at"
+    t.datetime "measured_at"
     t.string   "description"
     t.integer  "sensor_id"
     t.float    "measurement"
