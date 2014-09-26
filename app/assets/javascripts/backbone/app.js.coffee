@@ -13,7 +13,6 @@ app.routers = app.routers || {}
 
 
 app.init = ->
-  console.log("app init")
   new app.routers.MainRouter()
   Backbone.history.start()
 

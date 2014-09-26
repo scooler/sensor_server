@@ -3,5 +3,4 @@ class app.routers.MainRouter extends Backbone.Router
     "" : "index"
 
   index: ->
-    console.log("In router")
     @view = new app.views.RecentChart()
