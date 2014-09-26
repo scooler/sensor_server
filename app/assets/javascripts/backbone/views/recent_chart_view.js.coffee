@@ -11,7 +11,7 @@ class app.views.RecentChart
 
   fetchData: ->
     console.log("fetch data")
-    @collection = new app.models.RecentReadouts()
+    @collection = new app.models.Sensors()
     @collection.on("sync", @showChart)
     @collection.fetch()
 

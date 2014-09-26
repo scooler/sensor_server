@@ -6,6 +6,9 @@ SensorServera::Application.routes.draw do
   root 'static#index'
 
   resources :last_measurements, only: :index
+  resources :sensors, only: :index do
+    get "last_measurements", on: :collection
+  end
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
