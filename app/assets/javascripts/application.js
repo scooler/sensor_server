@@ -13,4 +13,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
+//= require ./lib/Chart
+//= require backbone-rails
+
+// = require_tree .
+// = require_directory ./lib
+
+//= require backbone/app

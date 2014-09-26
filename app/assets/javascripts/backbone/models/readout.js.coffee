@@ -1,0 +1,1 @@
+class app.models.Readout extends Backbone.Model

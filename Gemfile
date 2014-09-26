@@ -36,6 +36,8 @@ group :development do
   gem "pry"
 end
 
+gem 'backbone-rails', '~> 1.1.2'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
