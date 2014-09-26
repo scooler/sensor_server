@@ -1,4 +1,4 @@
-class app.utils.ChartDataConverter
+class app.utils.ChartJSChartDataConverter
   constructor: (@collection) ->
 
   data: ->

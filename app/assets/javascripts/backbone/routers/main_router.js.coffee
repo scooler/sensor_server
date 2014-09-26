@@ -3,4 +3,4 @@ class app.routers.MainRouter extends Backbone.Router
     "" : "index"
 
   index: ->
-    @view = new app.views.RecentChart()
+    @view = new app.views.HightchartsRecentChart()

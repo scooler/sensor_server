@@ -1,4 +1,4 @@
-class app.views.RecentChart
+class app.views.ChartJSRecentChart
   constructor: ->
     ctx = $("#myChart").get(0).getContext("2d")
     @myNewChart = new Chart(ctx)
