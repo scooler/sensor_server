@@ -23,7 +23,7 @@ class DataMover
       raw: row[1],
       measurement: row[2],
       sensor_id: row[3],
-      description: row[4].try(:trim)
+      description: row[4].try(:strip)
     }    
   end
 end
