@@ -19,7 +19,7 @@ class DataMover
   def create_temp_measurement(row)
     tm = TempMeasurement.new(row_to_hash(row))
     if tm.save
-      created += 1 
+      @created += 1 
     end
     tm
   end
