@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140924204013) do
+ActiveRecord::Schema.define(version: 20140926123433) do
+
+  create_table "sensors", force: true do |t|
+    t.string   "name"
+    t.string   "color",       default: "200,200,200"
+    t.string   "sensor_type", default: "temperature"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "temp_measurements", force: true do |t|
     t.integer  "raw"

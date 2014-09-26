@@ -3,17 +3,33 @@ require 'csv'
 class DataMover
   def initialize
     @data = CSV.read('./tmp/test.csv')
+    @created = 0
   end
 
   def run
-    created = 0
     @data.each do |row| 
-      if TempMeasurement.new(row_to_hash(row)).save
-        created += 1 
-      end
+      tm = create_temp_measurement(row)
+      find_or_create_sensor(tm)
     end
-    if created != @data.length
+    if @created != @data.length
       puts "Not created all measuments into DB"
+    end
+  end
+
+  def create_temp_measurement(row)
+    tm = TempMeasurement.new(row_to_hash(row))
+    if tm.save
+      created += 1 
+    end
+    tm
+  end
+
+  def find_or_create_sensor(tm)
+    sensor = Sensor.where(id: tm.sensor_id).first_or_initialize
+    if sensor.new_record?
+      sensor.name = tm.description
+      sensor.save!
+      puts "CREATED NEW SENSOR - setup a color"
     end
   end
 
