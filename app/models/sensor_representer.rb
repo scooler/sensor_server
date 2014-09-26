@@ -13,7 +13,7 @@ class SensorRepresenter
   end
 
   def measurements
-    @sensor.temp_measurements.last_day.map{|m| measurement(m)}
+    @sensor.temp_measurements.last_week.order("measured_at").map{|m| measurement(m)}
   end
 
   def measurement(measurement)

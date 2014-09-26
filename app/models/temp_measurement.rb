@@ -8,6 +8,8 @@ class TempMeasurement < ActiveRecord::Base
   validate :sensor_id, presence: true
 
   scope :last_day, -> { where("measured_at > ?", Time.now - 1.day) }
+  scope :last_week, -> { where("measured_at > ?", Time.now - 1.week) }
+  scope :last_month, -> { where("measured_at > ?", Time.now - 1.month) }
   scope :time_similar, lambda { |time| where("measured_at < ? AND measured_at > ?", time + 1.second, time - 1.second)}
 
   def duplicate_measurement
