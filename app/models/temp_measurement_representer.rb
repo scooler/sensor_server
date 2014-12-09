@@ -1,15 +1,13 @@
-class TempMeasurementRepresenter
-  def initialize(measurement)
-    @measurement = measurement
-  end
+class TempMeasurementRepresenter < Roar::Decorator
+  include Roar::Representer::JSON
 
-  def to_json()
-    {
-      sensor_id: @measurement.sensor_id,
-      measured_at: @measurement.measured_at,
-      color: @measurement.sensor.color,
-      measurement: @measurement.measurement,
-      description: @measurement.description,
-    }
+  property   :sensor_id
+  property   :measured_at
+  property   :measurement
+  property   :description
+  property   :color, exec_context: :decorator
+
+  def color
+    represented.sensor.color
   end
 end

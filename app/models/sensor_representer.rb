@@ -1,25 +1,9 @@
-class SensorRepresenter
-  def initialize(sensor)
-    @sensor = sensor
-  end
+class SensorRepresenter < Roar::Decorator
+  include Roar::Representer::JSON
+  
+  property :id, as: :sensor_id
+  property :color
+  property :name
+  collection :temp_measurements, as: :measurements, extend: SimpleTempMeasurementRepresenter, class: TempMeasurement
 
-  def to_json()
-    {
-      sensor_id: @sensor.id,
-      color: @sensor.color,
-      name: @sensor.name,
-      measurements: measurements
-    }
-  end
-
-  def measurements
-    @sensor.temp_measurements.last_week.order("measured_at").map{|m| measurement(m)}
-  end
-
-  def measurement(measurement)
-    {
-      measurement: measurement.measurement,
-      measured_at: measurement.measured_at
-    }
-  end
 end
