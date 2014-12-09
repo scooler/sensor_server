@@ -37,6 +37,11 @@ group :development do
   gem "pry"
 end
 
+group :test do
+  gem 'rspec-rails', '~> 3.0'
+end
+
+
 gem 'backbone-rails', '~> 1.1.2'
 
 # Use ActiveModel has_secure_password
